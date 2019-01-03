@@ -7,7 +7,8 @@ describe 'Forecast API' do
 
     get '/api/v1/forecast?location=denver,co'
 
-    expect(response.status).to eq 200
+    expect(response).to be_successful
+    # expect(response.status).to eq 200
 
     # forecast = JSON.parse(response.body, symbolize_names: true)
 
