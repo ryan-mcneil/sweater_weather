@@ -15,9 +15,7 @@ describe 'GoogleService' do
           location = 'denver,co'
           service = GoogleService.new(location)
           coords = service.get_coords
-          expect(coords.size).to eq 2
-          expect(coords[:lat]).to eq 39.7392358
-          expect(coords[:lng]).to eq -104.990251
+          expect(coords).to eq '39.7392358,-104.990251'
         end
       end
     end
