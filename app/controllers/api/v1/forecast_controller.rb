@@ -7,10 +7,4 @@ class Api::V1::ForecastController < ApplicationController
 
   end
 
-  private
-
-  def get_coords(city)
-    service = GoogleService.new(city)
-    service.get_coords
-  end
 end
