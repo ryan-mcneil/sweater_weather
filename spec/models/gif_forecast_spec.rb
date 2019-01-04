@@ -26,6 +26,9 @@ describe 'gif_forecast' do
         stub_request(:get, "https://api.darksky.net/forecast/#{ENV['DARKSKY_API_KEY']}/#{coords}?exclude=[minutely,flags,alerts]").
           to_return(body: File.read('spec/fixtures/denver_forecast.json'))
 
+        stub_request(:get, "https://api.giphy.com/v1/gifs/search?api_key=#{ENV['GIPHY_API_KEY']}&q=Clear throughout the day.&limit=10&offset=0&rating=R&lang=en").
+          to_return(body: File.read('spec/fixtures/gifs.json'))
+
         gif_forecast = GifForecast.load_data(coords)
 
         expect(gif_forecast.daily_forecasts.size).to eq 8
