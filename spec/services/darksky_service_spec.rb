@@ -15,12 +15,12 @@ describe 'DarkskyService' do
           coords = '39.7392358,-104.990251'
           service = DarkskyService.new(coords)
 
-          json = service.get_forecast_json
+          forecast_data = service.get_forecast_json
 
-          expect(json).to be_a Hash
-          expect(json[:latitude]).to eq 39.7392358
-          expect(json[:currently][:summary]).to eq "Clear"
-          expect(json[:hourly][:summary]).to eq "Clear throughout the day."
+          expect(forecast_data).to be_a Hash
+          expect(forecast_data[:latitude]).to eq 39.7392358
+          expect(forecast_data[:currently][:summary]).to be_a String
+          expect(forecast_data[:hourly][:summary]).to be_a String
         end
       end
 

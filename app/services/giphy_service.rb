@@ -5,9 +5,17 @@ class GiphyService
   end
 
   def get_gif_json
-    conn = Faraday.new(url: "https://api.giphy.com")
-    response = conn.get("/v1/gifs/search?api_key=#{ENV['GIPHY_API_KEY']}&q=#{@_summary}&limit=10&offset=0&rating=R&lang=en")
+    get_json("/v1/gifs/search?api_key=#{ENV['GIPHY_API_KEY']}&q=#{@_summary}&limit=10&offset=0&rating=R&lang=en")
+  end
 
-    data = JSON.parse(response.body, symbolize_names: true)
+  private
+
+  def conn
+    Faraday.new(url: "https://api.giphy.com")
+  end
+
+  def get_json(url)
+    response = conn.get(url)
+    JSON.parse(response.body, symbolize_names: true)
   end
 end
