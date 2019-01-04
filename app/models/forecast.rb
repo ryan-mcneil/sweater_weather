@@ -1,30 +1,39 @@
 class Forecast
+  attr_reader :current_weather,
+              :hourly_forecast,
+              :daily_forecast
 
-  def initialize
-    @current_weather = nil
-    @hourly_forecast = []
-    @daily_forecast = []
+  def initialize(args)
+    @current_weather = args[:current_weather]
+    @hourly_forecast = args[:hourly_forecast]
+    @daily_forecast = args[:daily_forecast]
   end
 
-  def load_data(coords)
+  def self.load_data(coords, location)
     forecast_data = DarkskyService.new(coords).get_forecast_json
-    set_current_weather(forecast_data)
-    set_hourly_forecast(forecast_data)
-    set_daily_forecast(forecast_data)
+
+    forecast = Forecast.new({
+                              current_weather: get_current_weather(forecast_data, location),
+                              hourly_forecast: get_hourly_forecast(forecast_data),
+                              daily_forecast: get_daily_forecast(forecast_data)
+                            })
+    # get_current_weather(forecast_data)
+    # get_hourly_forecast(forecast_data)
+    # get_daily_forecast(forecast_data)
   end
 
   private
 
-  def set_current_weather(data)
-    # @current_weather = CurrentDay.read(data)
+  def self.get_current_weather(data, location)
+    @current_weather = CurrentDay.read(data, location)
   end
 
-  def set_hourly_forecast(data)
+  def self.get_hourly_forecast(data)
     # limited_data = data[:hourly]
     # @hours = CurrentDay.read(data)
   end
 
-  def set_daily_forecast(data)
+  def self.get_daily_forecast(data)
 
   end
 end
