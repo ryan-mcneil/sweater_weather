@@ -30,6 +30,7 @@ describe 'gif_forecast' do
 
         expect(gif_forecast.daily_forecasts.size).to eq 8
         expect(gif_forecast.daily_forecasts[0].time).to eq 1546498800
+        expect(gif_forecast.daily_forecasts[0].summary).to eq "Clear throughout the day."
 
       end
     end
