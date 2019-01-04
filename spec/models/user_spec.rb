@@ -7,8 +7,8 @@ describe User, type: :model do
     it {should validate_presence_of(:password)}
   end
 
-  it 'should start a nil API key' do
-    user = User.new(email: "example@gmail.com", password: "password")
-    expect(user.api_key).to eq nil
+  it 'should generate an API key on creation' do
+    user = User.create(email: "example@gmail.com", password: "password")
+    expect(user.api_key.size).to eq 30
   end
 end
