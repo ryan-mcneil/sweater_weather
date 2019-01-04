@@ -5,11 +5,12 @@ class WeatherGif
     @time =  args[:time]
     @summary =  args[:summary]
     @url =  args[:url]
+    @gif_data
   end
 
   def self.read(data)
     WeatherGif.new({
-      time: data[:time],
+      time: data[:time].to_s,
       summary: data[:summary],
       url: find_gif(data[:summary])
       })
@@ -18,7 +19,7 @@ class WeatherGif
   private
 
   def self.find_gif(summary)
-    gif_data = GiphyService.new(summary).get_gif_json
-    gif = gif_data[:data][0][:url]
+    @gif_data ||= GiphyService.new(summary).get_gif_json
+    gif = @gif_data[:data][0][:url]
   end
 end

@@ -5,8 +5,7 @@ describe 'gif_forecast' do
   let :attrs {
     {
       id: 1234,
-      daily_forecasts: [],
-      copyright: "2018"
+      daily_forecasts: []
     }
   }
   subject { GifForecast.new(attrs) }
@@ -14,7 +13,6 @@ describe 'gif_forecast' do
   it 'exists' do
     expect(subject).to be_a GifForecast
     expect(subject.daily_forecasts).to eq []
-    expect(subject.copyright).to eq "2018"
   end
 
   context 'class methods' do
@@ -33,7 +31,7 @@ describe 'gif_forecast' do
         gif_forecast = GifForecast.load_data(coords)
 
         expect(gif_forecast.daily_forecasts.size).to eq 8
-        expect(gif_forecast.daily_forecasts[0].time).to eq 1546498800
+        expect(gif_forecast.daily_forecasts[0].time).to eq "1546498800"
         expect(gif_forecast.daily_forecasts[0].summary).to eq "Clear throughout the day."
         expect(gif_forecast.daily_forecasts[0].url).to eq "https://giphy.com/gifs/water-ocean-sea-ivcVZnZAEqhs4"
 
