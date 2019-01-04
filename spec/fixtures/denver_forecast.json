@@ -1056,7 +1056,7 @@
             },
             {
                 "time": 1546671600,
-                "summary": "Mostly cloudy starting in the afternoon.",
+                "summary": "Clear throughout the day.",
                 "icon": "partly-cloudy-night",
                 "sunriseTime": 1546698145,
                 "sunsetTime": 1546732236,
@@ -1097,7 +1097,7 @@
             },
             {
                 "time": 1546758000,
-                "summary": "Mostly cloudy throughout the day.",
+                "summary": "Clear throughout the day.",
                 "icon": "partly-cloudy-day",
                 "sunriseTime": 1546784542,
                 "sunsetTime": 1546818691,
@@ -1139,7 +1139,7 @@
             },
             {
                 "time": 1546844400,
-                "summary": "Mostly cloudy throughout the day.",
+                "summary": "Clear throughout the day.",
                 "icon": "partly-cloudy-day",
                 "sunriseTime": 1546870937,
                 "sunsetTime": 1546905147,
@@ -1178,7 +1178,7 @@
             },
             {
                 "time": 1546930800,
-                "summary": "Mostly cloudy throughout the day.",
+                "summary": "Clear throughout the day.",
                 "icon": "partly-cloudy-day",
                 "sunriseTime": 1546957329,
                 "sunsetTime": 1546991605,
@@ -1217,7 +1217,7 @@
             },
             {
                 "time": 1547017200,
-                "summary": "Mostly cloudy throughout the day.",
+                "summary": "Clear throughout the day.",
                 "icon": "partly-cloudy-night",
                 "sunriseTime": 1547043720,
                 "sunsetTime": 1547078063,
@@ -1256,7 +1256,7 @@
             },
             {
                 "time": 1547103600,
-                "summary": "Overcast throughout the day.",
+                "summary": "Clear throughout the day.",
                 "icon": "cloudy",
                 "sunriseTime": 1547130108,
                 "sunsetTime": 1547164523,
