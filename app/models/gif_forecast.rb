@@ -4,15 +4,15 @@ class GifForecast
   def initialize(args)
     @id = SecureRandom.uuid
     @daily_forecasts = args[:daily_forecasts]
-    @daily_data
+    @_daily_data
   end
 
   def self.load_data(coords)
-    # Please give me feedback on if this was a good use of memoization. 
+    # Please give me feedback on if this was a good use of memoization.
     # I have yet to fully grasp when to pull it out
-    @daily_data ||= DarkskyService.new(coords).get_forecast_json[:daily][:data]
+    @_daily_data ||= DarkskyService.new(coords).get_forecast_json[:daily][:data]
     GifForecast.new({
-      daily_forecasts: daily_forecasts(@daily_data)
+      daily_forecasts: daily_forecasts(@_daily_data)
       })
   end
 
