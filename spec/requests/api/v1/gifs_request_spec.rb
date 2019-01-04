@@ -14,7 +14,6 @@ describe 'Giphy API' do
     expect(response.status).to eq 200
 
     gif_forecast = JSON.parse(response.body, symbolize_names: true)
-
     expect(gif_forecast[:data][:daily_forecasts].count).to eq 8
     expect(gif_forecast[:data][:daily_forecasts][0][:time]).to eq 1546498800
     expect(gif_forecast[:data][:daily_forecasts][0][:summary]).to eq "Clear throughout the day."

@@ -7,8 +7,7 @@ class GifForecast
   end
 
   def self.load_data(coords)
-    daily_data = DarkskyService.new(coords).get_forecast_json[:daily]
-    binding.pry
+    daily_data = DarkskyService.new(coords).get_forecast_json[:daily][:data]
     daily_forecasts = daily_data.map do |day_data|
       WeatherGif.read(day_data)
     end
