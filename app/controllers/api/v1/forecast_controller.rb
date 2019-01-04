@@ -2,7 +2,8 @@ class Api::V1::ForecastController < ApplicationController
 
   def show
     coords = get_coords(params[:location])
-    render json: coords
+    forecast = Forecast.load_data(coords, params[:location])
+    render json: forecast
 
   end
 

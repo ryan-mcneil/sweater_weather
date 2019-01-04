@@ -6,7 +6,8 @@ class GoogleService
 
   def get_coords
     data = get_json("/maps/api/geocode/json?address=#{@_city}&key=#{ENV['GOOGLE_API_KEY']}")
-    data[:results][0][:geometry][:location]
+    coords = data[:results][0][:geometry][:location]
+    "#{coords[:lat]},#{coords[:lng]}"
   end
 
   private
