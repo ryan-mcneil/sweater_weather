@@ -9,13 +9,17 @@ class GifForecast
 
   def self.load_data(coords)
     daily_data = DarkskyService.new(coords).get_forecast_json[:daily][:data]
-    daily_forecasts = daily_data.map do |day_data|
-      WeatherGif.read(day_data)
-    end
     GifForecast.new({
-      daily_forecasts: daily_forecasts,
+      daily_forecasts: daily_forecasts(daily_data),
       copyright: "2018"
       })
   end
 
+  private
+
+  def self.daily_forecasts(daily_data)
+    daily_data.map do |day_data|
+      WeatherGif.read(day_data)
+    end
+  end
 end
