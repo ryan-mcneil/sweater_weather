@@ -18,16 +18,22 @@ class CurrentDay
   def self.read(data, location)
     CurrentDay.new({
       summary: data[:currently][:summary],
-      temp: data[:currently][:temperature],
-      high: data[:daily][:data][0][:temperatureHigh],
-      low: data[:daily][:data][0][:temperatureLow],
+      temp: data[:currently][:temperature].round,
+      high: data[:daily][:data][0][:temperatureHigh].round,
+      low: data[:daily][:data][0][:temperatureLow].round,
       location: location,
-      date_time: Time.at(data[:currently][:time]),
+      date_time: format_date_time(Time.at(data[:currently][:time])),
       hourly_summary: data[:hourly][:summary],
-      feels_like: data[:currently][:apparentTemperature],
+      feels_like: data[:currently][:apparentTemperature].round,
       humidity: data[:currently][:humidity],
       visibility: data[:currently][:visibility],
       uv: data[:currently][:uvIndex],
     })
+  end
+
+  private
+
+  def self.format_date_time(date_time)
+    date_time.strftime("%l:%M %p, %-m/%-d")
   end
 end
