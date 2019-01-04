@@ -1,5 +1,16 @@
 class CurrentDay
-  attr_reader
+  attr_reader :summary,
+              :temp,
+              :high,
+              :low,
+              :location,
+              :date_time,
+              :hourly_summary,
+              :feels_like,
+              :humidity,
+              :visibility,
+              :uv
+
 
   def initialize(args)
     @summary = args[:summary]
@@ -34,6 +45,6 @@ class CurrentDay
   private
 
   def self.format_date_time(date_time)
-    date_time.strftime("%l:%M %p, %-m/%-d")
+    date_time.strftime("%l:%M %p, %-m/%-d").lstrip
   end
 end
