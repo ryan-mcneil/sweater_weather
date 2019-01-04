@@ -18,7 +18,6 @@ class WeatherGif
   private
 
   def self.find_gif(summary)
-    binding.pry
     conn = Faraday.new(url: "https://api.giphy.com")
     response = conn.get("/v1/gifs/search?api_key=#{ENV['GIPHY_API_KEY']}&q=#{summary}&limit=10&offset=0&rating=R&lang=en")
 

@@ -4,6 +4,7 @@ describe 'gif_forecast' do
 
   let :attrs {
     {
+      id: 1234,
       daily_forecasts: [],
       copyright: "2018"
     }
@@ -34,6 +35,7 @@ describe 'gif_forecast' do
         expect(gif_forecast.daily_forecasts.size).to eq 8
         expect(gif_forecast.daily_forecasts[0].time).to eq 1546498800
         expect(gif_forecast.daily_forecasts[0].summary).to eq "Clear throughout the day."
+        expect(gif_forecast.daily_forecasts[0].url).to eq "https://giphy.com/gifs/water-ocean-sea-ivcVZnZAEqhs4"
 
       end
     end
