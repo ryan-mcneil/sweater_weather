@@ -3,6 +3,7 @@ require 'rails_helper'
 describe DayForecast do
   let :attrs {
     {
+      day: "Thursday",
       summary: "Clear throughout the day.",
       precip: 0.02,
       high: 49,
@@ -63,6 +64,7 @@ describe DayForecast do
 
         day_forecast = DayForecast.read(data)
 
+        expect(day_forecast.day).to eq "Thursday"
         expect(day_forecast.summary).to eq "Clear throughout the day."
         expect(day_forecast.precip).to eq 0.02
         expect(day_forecast.high).to eq 49
