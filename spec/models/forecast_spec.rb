@@ -27,8 +27,8 @@ describe Forecast do
         forecast = Forecast.load_data(coords, "denver,co")
 
         expect(forecast.current_weather).to be_a CurrentDay
-        # expect(forecast.hourly_forecast[0]).to be_a HourForecast
-        # expect(forecast.daily_forecast[0]).to be_a DayForecast
+        expect(forecast.hourly_forecast[0]).to be_a HourForecast
+        expect(forecast.daily_forecast[0]).to be_a DayForecast
       end
     end
   end
