@@ -1,4 +1,8 @@
 class DayForecast
+  attr_reader :summary,
+              :precip,
+              :high,
+              :low
 
   def initialize(args)
     @summary = args[:summary]

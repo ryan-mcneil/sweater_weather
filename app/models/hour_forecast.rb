@@ -1,4 +1,5 @@
 class HourForecast
+  attr_reader :time, :temp
 
   def initialize(args)
     @time = args[:time]
