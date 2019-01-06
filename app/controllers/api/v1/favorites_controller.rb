@@ -1,5 +1,11 @@
 class Api::V1::FavoritesController < ApplicationController
 
+  def index
+    user = User.find_by_api_key(params[:api_key])
+
+    render json:
+  end
+
   def create
     user = User.find_by_api_key(params[:api_key])
     if user && params[:api_key] == user.api_key
