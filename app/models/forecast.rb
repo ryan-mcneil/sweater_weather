@@ -27,7 +27,7 @@ class Forecast
   private
 
   def self.get_current_weather(data, location)
-    @current_weather = CurrentDay.read(data, location)
+    @current_weather = CurrentWeather.read(data, location)
   end
 
   def self.get_hourly_forecast(data)
