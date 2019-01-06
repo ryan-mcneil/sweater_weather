@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe CurrentDay do
+describe CurrentWeather do
   let :attrs {
     {
       summary: "Clear",
@@ -16,15 +16,15 @@ describe CurrentDay do
       uv: 0
     }
   }
-  subject { CurrentDay.new(attrs) }
+  subject { CurrentWeather.new(attrs) }
 
   it 'exists' do
-    expect(subject).to be_a CurrentDay
+    expect(subject).to be_a CurrentWeather
   end
 
   context 'class methods' do
     context '::read' do
-      it 'reads data and returns CurrentDay object' do
+      it 'reads data and returns CurrentWeather object' do
         data = {
           latitude: 39.7392358,
           longitude: -104.990251,
@@ -83,7 +83,7 @@ describe CurrentDay do
         }
         location = 'denver,co'
 
-        current_day = CurrentDay.read(data, location)
+        current_day = CurrentWeather.read(data, location)
 
         expect(current_day.summary).to eq "Clear"
         expect(current_day.temp).to eq 25

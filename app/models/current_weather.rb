@@ -1,4 +1,4 @@
-class CurrentDay
+class CurrentWeather
   attr_reader :summary,
               :temp,
               :high,
@@ -27,7 +27,7 @@ class CurrentDay
   end
 
   def self.read(data, location)
-    CurrentDay.new({
+    CurrentWeather.new({
       summary: data[:currently][:summary],
       temp: data[:currently][:temperature].round,
       high: data[:daily][:data][0][:temperatureHigh].round,
