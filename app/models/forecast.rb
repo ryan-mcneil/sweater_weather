@@ -19,9 +19,6 @@ class Forecast
                               hourly_forecast: get_hourly_forecast(forecast_data),
                               daily_forecast: get_daily_forecast(forecast_data)
                             })
-    # get_current_weather(forecast_data)
-    # get_hourly_forecast(forecast_data)
-    # get_daily_forecast(forecast_data)
   end
 
   private
