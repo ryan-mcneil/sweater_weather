@@ -19,10 +19,4 @@ class Api::V1::FavoritesController < ApplicationController
     end
 
   end
-
-  private
-
-  # def current_weather
-  #   CurrentWeather.load_data(coords, params[:location])
-  # end
 end
