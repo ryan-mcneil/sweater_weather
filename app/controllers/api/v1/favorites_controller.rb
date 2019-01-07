@@ -1,8 +1,9 @@
 class Api::V1::FavoritesController < ApplicationController
 
   def index
-    if user
-      render json: UserFavoritesSerializer.new(user)
+    @user = user
+    if @user
+      render json: UserFavoritesSerializer.new(@user)
     else
       render status: 401
     end
