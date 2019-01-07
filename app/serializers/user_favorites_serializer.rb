@@ -3,12 +3,18 @@ class UserFavoritesSerializer
 
   attribute :favorites do |object|
     a = object.favorites.map do |favorite|
-      hash = {}
-      hash[:location] = favorite.location
-      coords = GoogleService.new(favorite.location).get_coords
-      forecast_data = DarkskyService.new(coords).get_forecast_json
-      hash[:current_weather] = CurrentWeather.read(forecast_data, favorite.location)
-      hash
+      favorite_to_hash(favorite.location)
     end
+  end
+
+  private
+
+  def self.favorite_to_hash(location)
+    hash = {}
+    hash[:location] = location
+    coords = GoogleService.new(location).get_coords
+    forecast_data = DarkskyService.new(coords).get_forecast_json
+    hash[:current_weather] = CurrentWeather.read(forecast_data, location)
+    hash
   end
 end
