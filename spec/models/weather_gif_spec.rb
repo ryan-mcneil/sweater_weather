@@ -20,9 +20,8 @@ describe 'WeatherGif' do
   context 'class methods' do
     context '::read' do
       it 'reads day data and returns a WeatherGif object' do
-        stub_request(:get, "https://api.giphy.com/v1/gifs/search?api_key=#{ENV['GIPHY_API_KEY']}&q=Clear throughout the day.&limit=10&offset=0&rating=R&lang=en").
-          to_return(body: File.read('spec/fixtures/gifs.json'))
-
+        stub_giphy_request
+        
         data = {
           time: "1546498800",
           summary: "Clear throughout the day."
