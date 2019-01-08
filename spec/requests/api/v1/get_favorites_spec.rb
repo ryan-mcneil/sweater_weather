@@ -4,7 +4,7 @@ describe 'gets favorite' do
   it 'creates a new favorite' do
     stub_location_request
     stub_forecast_request
-    
+
     user = create(:user, email: 'whatever@example.com', password: 'password')
     favorite_1 = user.favorites.create(location: "denver,co")
 
@@ -15,7 +15,7 @@ describe 'gets favorite' do
 
     expect(favorites.count).to eq 1
     expect(favorites[0][:location]).to eq "denver,co"
-    expect(favorites[0][:current_weather][:summary]).to eq "Clear"
+    expect(favorites[0][:current_weather][:current_weather][:summary]).to eq "Clear"
   end
 
   it 'returns a 401 if the wrong API key is used' do
