@@ -1,11 +1,11 @@
 class GiphyService
 
   def initialize(summary)
-    @_summary = summary
+    @summary = summary
   end
 
   def get_gif_json
-    get_json("/v1/gifs/search?api_key=#{ENV['GIPHY_API_KEY']}&q=#{@_summary}&limit=10&offset=0&rating=R&lang=en")
+    get_json("/v1/gifs/search?api_key=#{ENV['GIPHY_API_KEY']}&q=#{@summary}&limit=10&offset=0&rating=R&lang=en")
   end
 
   private

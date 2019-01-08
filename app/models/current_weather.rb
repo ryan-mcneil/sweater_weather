@@ -46,6 +46,5 @@ class CurrentWeather
 
   def self.format_date_time(date_time)
     date_time.strftime("%l:%M %p, %-m/%-d").lstrip
-    # date_time.strftime("%l:%M %p %Z(%:z), %-m/%-d").lstrip
   end
 end

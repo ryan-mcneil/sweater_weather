@@ -1,11 +1,11 @@
 class GoogleService
 
   def initialize(city)
-    @_city = city
+    @city = city
   end
 
   def get_coords
-    data = get_json("/maps/api/geocode/json?address=#{@_city}&key=#{ENV['GOOGLE_API_KEY']}")
+    data = get_json("/maps/api/geocode/json?address=#{@city}&key=#{ENV['GOOGLE_API_KEY']}")
     coords = data[:results][0][:geometry][:location]
     "#{coords[:lat]},#{coords[:lng]}"
   end

@@ -13,8 +13,7 @@ class UserFavoritesSerializer
     hash = {}
     hash[:location] = location
     coords = GoogleService.new(location).get_coords
-    forecast_data = DarkskyService.new(coords).get_forecast_json
-    hash[:current_weather] = CurrentWeather.read(forecast_data, location)
+    hash[:current_weather] = Forecast.load_data(coords, location)
     hash
   end
 end

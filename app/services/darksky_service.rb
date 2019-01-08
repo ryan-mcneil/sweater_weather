@@ -1,11 +1,11 @@
 class DarkskyService
 
   def initialize(coords)
-    @_coords = coords
+    @coords = coords
   end
 
   def get_forecast_json
-    data = get_json("/forecast/#{ENV['DARKSKY_API_KEY']}/#{@_coords}?exclude=[minutely,flags,alerts]")
+    data = get_json("/forecast/#{ENV['DARKSKY_API_KEY']}/#{@coords}?exclude=[minutely,flags,alerts]")
   end
 
   private
