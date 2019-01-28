@@ -21,11 +21,11 @@ Sweater Weather is a simple, single page application that displays the current w
   /api/v1/forecast?location=<location_name>
 
 #### Create User
-  (POST) api/v1/users?email=<whatever@example.com>&password=<password>&password_confirmation=<password>
+  (POST) api/v1/users?email=<whatever@example.com>&password=<new_password>&password_confirmation=<new_password>
   - Note: This will return an API key to use in other endpoints
 
 #### User Log In
-  (POST) api/v1/users?email=<whatever@example.com>&password=<password>
+  (POST) api/v1/users?email=<whatever@example.com>&password=<your_password>
   - Note: This will return an API key to use in other endpoints
 
 #### Create a Favorite for User
