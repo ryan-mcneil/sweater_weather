@@ -17,32 +17,32 @@ Sweater Weather is a simple, single page application that displays the current w
 ### Visit any of the following endpoints to receive data from the application
   Note: replace values in <> brackets with your own input
 
- - Get Forecast for Location
+#### Get Forecast for Location
   /api/v1/forecast?location=<location_name>
 
- - Create User
+#### Create User
   (POST) api/v1/users?email=<whatever@example.com>&password=<password>&password_confirmation=<password>
   Note: This will return an API key to use in other endpoints
 
- - User Log In
+#### User Log In
   (POST) api/v1/users?email=<whatever@example.com>&password=<password>
   Note: This will return an API key to use in other endpoints
 
- - Create a Favorite for User
+#### Create a Favorite for User
   (POST) /api/v1/favorites?location=<location_name>&api_key=<user_api_key>
 
- - Get User Favorites
+#### Get User Favorites
   /api/v1/favorites?api_key=<user_api_key>
 
- - Delete User Favorite
+#### Delete User Favorite
   (DELETE) /api/v1/favorites?location=<location_name>&api_key=<user_api_key>
 
- - Get Weather Gif
+#### Get Weather Gif
   /api/v1/gifs?location=<location_name>
 
-  * The following API keys are for Users already in the Development and Production Databases, respectively:
-  Development: User API Key: 265c45f154819d7e2942beb876682d
-  Heroku: User API Key: 30ea9d6a0766c61fe12ca9bf370178
+- The following API keys are for Users already in the Development and Production Databases, respectively:
+* Development: User API Key: 265c45f154819d7e2942beb876682d
+* Heroku: User API Key: 30ea9d6a0766c61fe12ca9bf370178
 
 ## Known Issues
 
