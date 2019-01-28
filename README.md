@@ -22,11 +22,11 @@ Sweater Weather is a simple, single page application that displays the current w
 
 #### Create User
   (POST) api/v1/users?email=<whatever@example.com>&password=<password>&password_confirmation=<password>
-  Note: This will return an API key to use in other endpoints
+  - Note: This will return an API key to use in other endpoints
 
 #### User Log In
   (POST) api/v1/users?email=<whatever@example.com>&password=<password>
-  Note: This will return an API key to use in other endpoints
+  - Note: This will return an API key to use in other endpoints
 
 #### Create a Favorite for User
   (POST) /api/v1/favorites?location=<location_name>&api_key=<user_api_key>
@@ -40,7 +40,7 @@ Sweater Weather is a simple, single page application that displays the current w
 #### Get Weather Gif
   /api/v1/gifs?location=<location_name>
 
-- The following API keys are for Users already in the Development and Production Databases, respectively:
+#### The following API keys are for Users already in the Development and Production Databases, respectively:
 * Development: User API Key: 265c45f154819d7e2942beb876682d
 * Heroku: User API Key: 30ea9d6a0766c61fe12ca9bf370178
 
